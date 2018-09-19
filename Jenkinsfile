@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+				cd server
+				gradle clean build
             }
         }
         stage('Test') {
