@@ -11,6 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+				dir('server') {sh './gradlew test'}
             }
         }
         stage('Deploy') {
