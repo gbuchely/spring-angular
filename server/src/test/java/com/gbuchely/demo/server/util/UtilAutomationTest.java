@@ -1,21 +1,17 @@
 package com.gbuchely.demo.server.util;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.Ignore;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-class UtilsTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@Tag("automation")
+class UtilAutomationTest {
 
     @Test
     void getComposedStringSuccesful() {
         assertEquals(2, 1 + 1);
-    }
-
-    @Ignore
-    @Test
-    void getComposedStringFailed() {
-        assertEquals(3, 1 + 1);
     }
 
 }

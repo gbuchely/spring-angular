@@ -48,3 +48,17 @@ test {
         html.enabled = true
     }
 }
+
+task automationTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'automation'
+    }
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    reports {
+        html.enabled = true
+    }
+}
