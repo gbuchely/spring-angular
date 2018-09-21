@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				dir('server') {sh './gradlew clean build'}
+				dir('client') {sh 'ng build'}
+				dir('server') {sh './gradlew clean build'}				
             }
         }
         stage('Test') {
