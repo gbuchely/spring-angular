@@ -21,18 +21,17 @@ pipeline {
                 }				
             }
         }
+        stage('Docker Build') {
+            agent any
+            steps {
+                sh 'docker build -t gbuchely/spring-angular:latest .'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
             }
-        }
-        stage('Build image') {
-            steps {
-                /* This builds the actual image; synonymous to
-                * docker build on the command line */
-                docker.build("getintodevops/hellonode")
-            }
-        }
+        }        
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
