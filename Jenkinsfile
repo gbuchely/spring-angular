@@ -16,9 +16,9 @@ pipeline {
         stage('Build BackEnd') {
             steps {
                 echo 'Building..'
-				dir('server') {
+				dir('server') {                    
+                    sh 'cp -r ../client/dist/client/* src/main/resources/static'
                     sh './gradlew clean build -x test'
-                    sh 'cp -r ../client/dist/client/* build/resources/main/static/'
                 }				
             }
         }
