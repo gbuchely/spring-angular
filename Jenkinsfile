@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
     tools {nodejs "node"}
     stages {
         stage('Build FrontEnd') {
@@ -25,6 +25,12 @@ pipeline {
             steps {
                 echo 'Testing..'
             }
+        }
+        stage('Build image') {
+            /* This builds the actual image; synonymous to
+            * docker build on the command line */
+
+            app = docker.build("getintodevops/hellonode")
         }
         stage('Deploy') {
             steps {
