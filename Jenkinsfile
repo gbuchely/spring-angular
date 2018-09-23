@@ -1,7 +1,6 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     tools {nodejs "node"}
-
     stages {
         stage('Build FrontEnd') {
             steps {
