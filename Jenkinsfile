@@ -18,7 +18,7 @@ pipeline {
                 echo 'Building..'
 				dir('server') {
                     sh './gradlew clean build -x test'
-                    cp -r '../client/dist/client/* build/resources/main/static/'
+                    sh 'cp -r ../client/dist/client/* build/resources/main/static/'
                 }				
             }
         }
