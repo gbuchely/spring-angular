@@ -1,6 +1,7 @@
 pipeline {
     agent any
     tools {nodejs "node"}
+    def app
     stages {
         stage('Build FrontEnd') {
             steps {
