@@ -8,7 +8,7 @@ pipeline {
                 echo 'Building..'
 				dir('client') {
                     sh 'npm install'
-                    sh 'ng build'
+                    sh 'npm run ng build'
                 }				
             }
         }
