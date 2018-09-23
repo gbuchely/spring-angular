@@ -3,10 +3,21 @@ pipeline {
     tools {nodejs "node"}
 
     stages {
-        stage('Build') {
+        stage('Build FrontEnd') {
             steps {
                 echo 'Building..'
-				dir('client') {sh 'npm install'}				
+				dir('client') {
+                    sh 'npm install'
+                    sh 'ng build'
+                }				
+            }
+        }
+        stage('Build BackEnd') {
+            steps {
+                echo 'Building..'
+				dir('server') {
+                    sh './gradlew clean build'
+                }				
             }
         }
         stage('Test') {
