@@ -8,7 +8,7 @@ pipeline {
                 echo 'Building..'
 				dir('client') {
                     sh 'npm install'
-                    rm -rf 'dist'
+                    sh 'rm -rf dist'
                     sh 'npm run ng build'
                 }				
             }
